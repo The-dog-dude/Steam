@@ -1,5 +1,10 @@
+@font-face {
+  font-family: Source Code;
+  src: url(source-code-pro-v14-latin-regular.woff2);
+}
+
 h1, p {
-  font-family: monospace;
+  font-family: Source Code;
 }
 
 .sidebar {
