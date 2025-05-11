@@ -78,3 +78,7 @@ main .sidebar {
     font-size: 18px;
   }
 }
+
+@keyframes flip-over {
+  0%   {transform: rotateY(0deg);}
+  100% {transform: rotateY(360deg);}
