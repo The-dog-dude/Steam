@@ -1,5 +1,19 @@
 body {
   background-color: #00012d;
+  text-align: center;
+  color: #00ffdd;
+  text-shadow: #00ffdd;
+}
+
+#enter-button {
+  background-color: #00ffdd;
+  color: #00012d;
+  box-shadow: #00ffdd;
+}
+
+#enter-button:hover {
+  animation-name: flip-over;
+  animation-duration: 4s;
 }
 
 .sidebar {
@@ -15,17 +29,24 @@ body {
 
 .sidebar li a {
   display: block;
-  color: white;
+  color: #00ffdd;
   padding: 8px 16px;
   text-decoration: none;
 }
 
 .sidebar li a.active {
   background-color: #001a4f;
-  color: white;
+  color: #00ffdd;
 }
 
 .sidebar li a:hover:not(.active) {
   background-color: #131432;
-  color: white;
+  color: #00ffdd;
+}
+
+@keyframes flip-over {
+  0%   {transform: rotateY(0deg);}
+  25%  {transform: rotateY(120deg);}
+  50%  {transform: rotateY(240deg);}
+  100% {transform: rotateY(360deg);}
 }
