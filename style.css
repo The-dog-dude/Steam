@@ -1,4 +1,4 @@
-#main {
+body:not(.sidebar) {
   background-color: #00012d;
   text-align: center;
   color: #00ffdd;
