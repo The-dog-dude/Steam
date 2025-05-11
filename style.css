@@ -13,9 +13,6 @@ body {
   width: 60px;
   border: #00ffdd;
   border-radius: 5px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 #enter-button:hover {
