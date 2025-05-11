@@ -8,7 +8,9 @@ body {
 #enter-button {
   background-color: #00ffdd;
   color: #00012d;
-  box-shadow: #00ffdd;
+  box-shadow: 10px 10px 20px 15px #00ffdd;
+  height: 75px;
+  width: 125px;
 }
 
 #enter-button:hover {
