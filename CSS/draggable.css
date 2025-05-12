@@ -1,31 +1,17 @@
-#draghtml {
+#div {
   position: absolute;
   z-index: 9;
   background-color: #f1f1f1;
   text-align: left;
   border: 1px solid #d3d3d3;
   color: black;
+  width: 75px;
 }
 
-#draghtmlheader {
+.dragheader {
   padding: 10px;
   cursor: move;
   z-index: 10;
   color: black;
-}
-
-#dragcss {
-  position: absolute;
-  z-index: 9;
-  background-color: #f1f1f1;
-  text-align: left;
-  border: 1px solid #d3d3d3;
-  color: black;
-}
-
-#dragcssheader {
-  padding: 10px;
-  cursor: move;
-  z-index: 10;
-  color: black;
+  width: 75px;
 }

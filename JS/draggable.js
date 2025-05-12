@@ -1,6 +1,10 @@
 //Make the DIV element draggagle:
 dragElement(document.getElementById("draghtml"));
 dragElement(document.getElementById("dragcss"));
+dragElement(document.getElementById("dragjs"));
+dragElement(document.getElementById("dragpy"));
+dragElement(document.getElementById("dragjson"));
+
 
 
 function dragElement(elmnt) {
