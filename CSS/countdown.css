@@ -14,7 +14,7 @@
   font-family: "Bungee Shade", cursive;
   font-size: var(--f);
   display: flex;
-  min-height: 100vh;
+  min-height: 10vh;
   margin: 0;
   overflow: hidden;
 }
