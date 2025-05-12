@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;/&gt;</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="PRISM/prism.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+        <h1>Making a draggable element</h1>
+        <p>First, make a file named index.html:</p>
+        <pre>
+            <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+   &lt;link rel="stylesheet" href="style.css"&gt;
+   &lt;title&gt;Draggable Elements&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;main&gt;
+       &lt;!-- Draggable DIV --&gt;
+       &lt;div id="mydiv"&gt;
+       &lt;!-- Include a header DIV with the same name as the draggable DIV, followed by "header" --&gt;
+           &lt;div id="mydivheader"&gt;Click here to move&lt;/div&gt;
+           &lt;p&gt;This is movable!&lt;/p&gt;
+       &lt;/div&gt;
+
+
+           
+   &lt;script src="app.js"&gt;&lt;/script&gt;
+   &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+            </code>
+        </pre>
+        <p>Next make a file named style.css:</p>
+        <pre>
+            <code class="language-css">
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+            </code>
+        </pre>
+                <p>Finally, make a file named app.js:</p>
+        <pre>
+            <code class="language-js">
+// Make the DIV element draggable:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+            </code>
+        </pre>
+
+    </main>
+    <script src="PRISM/prism.js"></script>
+  </body>
+</html>
