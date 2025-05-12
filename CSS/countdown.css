@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bungee+Shade");
 :root {
-  --f-size: 15;
+  --f-size: 5;
   --f-unit: 1vmin;
   --f: calc(var(--f-size) * var(--f-unit));
   --bg: #181717;
