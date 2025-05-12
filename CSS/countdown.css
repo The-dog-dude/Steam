@@ -13,7 +13,6 @@
 #glitch-section {
   font-family: "Bungee Shade", cursive;
   font-size: var(--f);
-  background-color: var(--bg);
   display: flex;
   min-height: 100vh;
   margin: 0;
