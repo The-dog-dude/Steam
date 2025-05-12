@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-#glitch {
+#glitch-section {
   font-family: "Bungee Shade", cursive;
   font-size: var(--f);
   background-color: var(--bg);
