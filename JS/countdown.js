@@ -19,7 +19,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  document.getElementById("summervac").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text
@@ -50,7 +50,7 @@ var x2 = setInterval(function() {
   var seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days2 + "d " + hours2 + "h "
+  document.getElementById("summer").innerHTML = days2 + "d " + hours2 + "h "
   + minutes2 + "m " + seconds2 + "s ";
 
   // If the count down is finished, write some text
