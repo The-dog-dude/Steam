@@ -3,6 +3,7 @@
      justify-content: center;
      align-items: center;
      height: 200px;
+     width: 200px;
  }
  .color-picker {
      background-color: #fff;
