@@ -1,23 +1,11 @@
-let red = document.getElementById('red');
-let green = document.getElementById('green');
-let blue = document.getElementById('blue');
-let box = document.querySelector('div.neumorphism-3');
-let r = 0, g = 0, b = 0;
-red.addEventListener("keyup", function (event) {
-    r = red.value;
-    if (!r)
-        r = 0;
-    box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-});
-green.addEventListener("keyup", function (event) {
-    g = green.value;
-    if (!g)
-        g = 0;
-    box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-});
-blue.addEventListener("keyup", function (event) {
-    b = blue.value;
-    if (!b)
-        b = 0;
-    box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-});
+ document.getElementById('colorInput').addEventListener('input', function() {
+     const color = this.value;
+     document.getElementById('hexValue').textContent = color;
+     document.getElementById('rgbValue').textContent = hexToRgb(color);
+ });
+ function hexToRgb(hex) {
+     const r = parseInt(hex.slice(1, 3), 16);
+     const g = parseInt(hex.slice(3, 5), 16);
+     const b = parseInt(hex.slice(5, 7), 16);
+     return `rgb(${r}, ${g}, ${b})`;
+ }
