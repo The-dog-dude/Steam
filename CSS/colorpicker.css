@@ -2,7 +2,7 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     height: 105vh;
+     height: 200px;
  }
  .color-picker {
      background-color: #fff;
