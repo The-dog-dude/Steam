@@ -4,6 +4,9 @@
      align-items: center;
      height: 200px;
      width: 200px;
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
  }
  .color-picker {
      background-color: #fff;
