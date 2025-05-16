@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;/&gt;</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="PRISM/prism.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+        <h1>Making a draggable element</h1>
+        <p>First, make a file named index.html:</p>
+        <pre>
+            <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+   &lt;link rel="stylesheet" href="style.css"&gt;
+   &lt;title&gt;Countdown&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;main&gt;
+       &lt;p id="countdown"&gt;&lt;/p&gt;
+       &lt;p&gt;until YOUR_DATE&lt;/p&gt;
+   &lt;script src="app.js"&gt;&lt;/script&gt;
+   &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+            </code>
+        </pre>
+        <p>Next make a file named style.css:</p>
+        <pre>
+            <code class="language-css">
+countdown {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+            </code>
+        </pre>
+                <p>Finally, make a file named app.js:</p>
+        <pre>
+            <code class="language-js">
+// Set the date we're counting down to
+var countDownDate = new Date("YOUR_DATE").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="countdown"
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance &lt; 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
+            </code>
+        </pre>
+
+    </main>
+    <script src="PRISM/prism.js"></script>
+  </body>
+</html>
